@@ -16,6 +16,6 @@ spec:
     spec: 
       containers: 
       - name: demo-api
-        image: bettmensch88/argo-cd-demo-api:development-0f8c8bef53d632a6e036b142d9f6dfdfa8028cee
+        image: bettmensch88/argo-cd-demo-api:development-ee5e3dc881fae43c0679ef7b1d19b18fb7e9e5da
         ports: 
         - containerPort: 8000
