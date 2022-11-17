@@ -1,4 +1,3 @@
---- 
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
@@ -16,9 +15,7 @@ spec:
         app: demo-api
     specs: 
       containers: 
-        - 
-          image: "bettmensch88/argo-cd-demo-api:development-4ae9499450bb3566fa8d58cc09b8a1c2a9884388"
-          name: demo-api
-          ports: 
-            - 
-              containerPort: 8000
+      - name: demo-api
+        image: "bettmensch88/argo-cd-demo-api:development-4ae9499450bb3566fa8d58cc09b8a1c2a9884388"
+        ports: 
+        - containerPort: 8000
