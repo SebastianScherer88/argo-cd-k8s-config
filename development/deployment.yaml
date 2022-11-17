@@ -13,7 +13,7 @@ spec:
     metadata: 
       labels: 
         app: demo-api
-    specs: 
+    spec: 
       containers: 
       - name: demo-api
         image: "bettmensch88/argo-cd-demo-api:development-4ae9499450bb3566fa8d58cc09b8a1c2a9884388"
