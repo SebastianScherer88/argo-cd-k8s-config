@@ -29,4 +29,4 @@ jobs:
       run: chmod +x /usr/local/bin/helm
 
     - name: Inject development template with development development-values.yaml
-      run: helm template demo-api-development ./development/demo-api --values .development/demo-api/development-values.yaml
+      run: helm template demo-api-development ./development/demo-api --values .development/demo-api/values.yaml
