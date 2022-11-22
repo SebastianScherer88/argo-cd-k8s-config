@@ -9,10 +9,7 @@ spec:
   source:
     repoURL: https://github.com/SebastianScherer88/argo-cd-k8s-config.git
     targetRevision: HEAD
-    path: development/demo-api # location of the demo-api helm chart
-    helm:
-      valueFiles:
-      - development/demo-api/values.yaml
+    path: development/demo-api/ # location of the demo-api helm chart
 
   destination:
     server: https://kubernetes.default.svc
