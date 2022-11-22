@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   labels: 
-    app: demo-api
-  name: demo-api-deployment
+    app: {{ .Values.name }}
+  name: {{ .Values.name }}
 spec: 
   replicas: 2
   selector: 
