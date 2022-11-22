@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-api-argo-application
+  name: demo-api-production
   namespace: argocd
 spec:
   project: default
@@ -9,11 +9,11 @@ spec:
   source:
     repoURL: https://github.com/SebastianScherer88/argo-cd-k8s-config.git
     targetRevision: HEAD
-    path: development # location of the demo-api helm chart
+    path: environments/production # location of the demo-api helm chart
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: demo-api
+    namespace: demo-api-production
 
   syncPolicy:
     syncOptions:
