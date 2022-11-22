@@ -1,0 +1,44 @@
+---
+# Source: demo-api/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-api
+spec:
+  selector:
+    app: demo-api
+  type: NodePort
+  ports:
+    - port: 8081
+      protocol: TCP
+      targetPort: 8000
+      nodePort: 30000
+---
+# Source: demo-api/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app: demo-api
+  name: demo-api
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: demo-api
+  template: 
+    metadata: 
+      labels: 
+        app: demo-api
+    spec: 
+      containers: 
+      - name: demo-api
+        image: bettmensch88/argo-cd-demo-api:development-ee5e3dc881fae43c0679ef7b1d19b18fb7e9e5da
+        ports: 
+        - containerPort: 8000
+---
+# Source: demo-api/templates/development-values.yaml
+deployment:
+  image: "bettmensch88/argo-cd-demo-api"
+  tag: "development-ee5e3dc881fae43c0679ef7b1d19b18fb7e9e5da"
+name: demo-api
