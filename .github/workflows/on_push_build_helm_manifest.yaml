@@ -7,23 +7,23 @@ on:
 
 jobs:
   build_template_and_push:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-  - name: Checkout
-    uses: actions/checkout@v3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
 
-  - name: Download helm
-    run: curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
+    - name: Download helm
+      run: curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
 
-  - name: Unzip helm
-    run: tar -C /tmp/ -zxvf helm-v3.4.0-linux-amd64.tar.gz
+    - name: Unzip helm
+      run: tar -C /tmp/ -zxvf helm-v3.4.0-linux-amd64.tar.gz
 
-  - name: Rm zipped helm
-    run: rm helm-v3.4.0-linux-amd64.tar.gz
+    - name: Rm zipped helm
+      run: rm helm-v3.4.0-linux-amd64.tar.gz
 
-  - name: Move helm
-    run: mv /tmp/linux-amd64/helm /usr/local/bin/helm
+    - name: Move helm
+      run: mv /tmp/linux-amd64/helm /usr/local/bin/helm
 
-  - name: Set permissions on helm
-    run: chmod +x /usr/local/bin/helm
+    - name: Set permissions on helm
+      run: chmod +x /usr/local/bin/helm
