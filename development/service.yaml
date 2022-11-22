@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.name }}
+  name: demo-api-service
 spec:
   selector:
-    app: {{ .Values.name }}
+    app: demo-api
   type: NodePort
   ports:
     - port: 8081

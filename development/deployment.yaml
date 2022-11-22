@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   labels: 
-    app: {{ .Values.name }}
-  name: {{ .Values.name }}
+    app: demo-api
+  name: demo-api-deployment
 spec: 
   replicas: 2
   selector: 
     matchLabels: 
-      app: {{ .Values.name }}
+      app: demo-api
   template: 
     metadata: 
       labels: 
-        app: {{ .Values.name }}
+        app: demo-api
     spec: 
       containers: 
-      - name: {{ .Values.name }}
-        image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
+      - name: demo-api
+        image: bettmensch88/argo-cd-demo-api:development-ee5e3dc881fae43c0679ef7b1d19b18fb7e9e5da
         ports: 
         - containerPort: 8000
