@@ -1,0 +1,5 @@
+spec:
+  template: 
+    spec: 
+      containers: 
+        image: bettmensch88/argo-cd-demo-api:development-ee5e3dc881fae43c0679ef7b1d19b18fb7e9e5da

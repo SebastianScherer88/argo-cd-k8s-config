@@ -3,3 +3,4 @@ bases:
 patches:
   - replica_count.yaml
   - port_forward.yaml
+  - container_image.yaml
