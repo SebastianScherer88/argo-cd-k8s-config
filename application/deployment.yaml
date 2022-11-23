@@ -6,6 +6,7 @@ metadata:
   name: demo-api-deployment
 spec: 
   replicas: 2
+  revisionHistoryLimit: 0 # Default to 10 if not specified
   selector: 
     matchLabels: 
       app: demo-api
