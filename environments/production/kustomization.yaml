@@ -1,5 +1,5 @@
 bases:
   - ../../application
-patches:
+patchesStrategicMerge:
   - replica_count.yaml
   - port_forward.yaml
