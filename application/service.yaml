@@ -6,4 +6,3 @@ spec:
   selector:
     app: demo-api
   type: NodePort
-  ports:
