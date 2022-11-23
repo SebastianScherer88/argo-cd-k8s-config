@@ -3,4 +3,4 @@ kind: Deployment
 metadata: 
   name: demo-api-deployment
 spec: 
-  replicas: 1
+  replicas: 4
