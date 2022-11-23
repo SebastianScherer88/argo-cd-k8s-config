@@ -5,5 +5,6 @@ metadata:
 spec:
   template: 
     spec: 
-      containers: 
-      - image: bettmensch88/argo-cd-demo-api:stage-63f7fe7cc3de618e8d96e63ab2452225945549e5
+      containers:
+      - name: demo-api
+        image: bettmensch88/argo-cd-demo-api:stage-63f7fe7cc3de618e8d96e63ab2452225945549e5
