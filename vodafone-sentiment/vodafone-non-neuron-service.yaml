@@ -1,0 +1,26 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: vodafone-sentiment-non-neuron
+  namespace: kubeflow-user-example-com
+spec:
+  predictor:
+    serviceAccountName: sa
+    containers:
+      - name: kserve-non-neuron-container
+        image: 484375727565.dkr.ecr.us-east-1.amazonaws.com/vodafone-sentiment-cicd-poc:non-neuron
+        env:
+        - name: LOAD_FROM_S3
+          value: "True"
+        - name: MODEL_REGISTRY_S3_BUCKET
+          value: "airpr-dataprovider"
+        - name: MODEL_REGISTRY_S3_PREFIX
+          value: "models/vodafone-sentiment-ci-cd-poc/ml_neuron_build_pipeline_outputs"
+        - name: MODEL_VERSION
+          value: "2022_11_13__13_14_22__d6b34f9"
+        resources:
+          limits:
+            aws.amazon.com/neuron: 1  # desired number of Inferentia devices.
+            memory: 5Gi
+          requests:
+            memory: 4Gi
